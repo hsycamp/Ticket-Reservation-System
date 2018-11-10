@@ -3,8 +3,8 @@ CREATE TABLE buildings (
 	name varchar(200),
 	location varchar(200),
 	capacity int(11),
-	assigned int(11),
-	PRIMARY KEY (`id`)
+	assigned int(11) DEFAULT 0,
+	PRIMARY KEY (id)
 ) ;
 
 CREATE TABLE audiences (
@@ -12,7 +12,7 @@ CREATE TABLE audiences (
   name varchar(200),
   gender char(1),
   age int(11),
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (id)
 ) ;
 
 CREATE TABLE performances (
