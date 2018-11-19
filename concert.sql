@@ -28,10 +28,10 @@ CREATE TABLE performances (
 
 
 CREATE TABLE books (
-  seat_number int(200) DEFAULT NULL,
-  audience_id int(11) DEFAULT NULL,
-  performance_id int(11) DEFAULT NULL,
+  seat_number int(200),
+  audience_id int(11),
+  performance_id int(11),
   PRIMARY KEY (seat_number,performance_id),
-  FOREIGN KEY (audience_id) REFERENCES audiences(id) ON DELETE CASCADE,
+  FOREIGN KEY (audience_id) REFERENCES audiences(id) ON DELETE SET NULL,
   FOREIGN KEY (performance_id) REFERENCES performances(id) ON DELETE CASCADE
 ) ;
