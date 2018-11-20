@@ -86,7 +86,13 @@ def insert_building(cursor):
     # 4. Insert a new building
     try:
         b_name = input("Building name: ")
+        if b_name == "":
+            print("A length of building name should be at least 1")
+            return
         b_location = input("Building location: ")
+        if b_location == "":
+            print("A length of location name should be at least 1")
+            return
         b_capacity = int(input("Building capacity: "))
         sql = "INSERT INTO buildings (name,location,capacity) VALUES (%s,%s,%s)"
         cursor.execute(sql, (b_name, b_location, b_capacity))
@@ -129,7 +135,13 @@ def insert_performance(cursor):
     # 6. INSERT INTO a new performance records
     try:
         p_name = input("Performance name: ")
+        if p_name == "":
+            print("A length of performance name should be at least 1")
+            return
         p_type = input("Performance type: ")
+        if p_type == "":
+            print("A length of performance type should be at least 1")
+            return
         p_price = int(input("Performance price: "))
 
         sql = "INSERT INTO performances (name,type,price) values (%s,%s,%s)"
@@ -164,7 +176,13 @@ def insert_audience(cursor):
     # 8. INSERT a new audience records
     try:
         a_name = input("Audience name: ")
+        if a_name == "":
+            print("A length of audience name should be at least 1")
+            return
         a_gender = input("Audience gender: ")
+        if a_gender not in ['M', 'F']:
+            print("You should input 'M' or 'F'")
+            return
         a_age = int(input("Audience age: "))
 
         sql = "INSERT INTO audiences (name,gender,age) VALUES (%s,%s,%s)"
